@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #lineNo {
+            color: blue;
+            border: 2px solid gray;
+            width: 40%;
+            height: 10%;
+            margin-left: 620px;
+            margin-top: -280px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+
+        }
+
+        textarea {
+            width: 40%;
+            font-size: 15px;
+            margin-left: 80px;
+            margin-top: 35px;
+            color: blue;
+
+        }
+    </style>
+    <title>TASK 1</title>
+    <textarea rows="20" cols="80" placeholder="Please Write Text Here!" value=""
+        onkeyup="getLineNumber(this, document.getElementById('LineNumber'));" onmouseup="this.onkeyup();"></textarea>
+
+    <br>
+    <br>
+    <div id="lineNo">
+
+        <p> <span id="LineNumber">Please Write Some Lines</span></p>
+
+    </div>
+
+
+    <script>
+
+        function getLineNumber(textarea, indicator) {
+            var leng = textarea.value.substr(0, textarea.selectionStart).split("\n").length;
+
+            indicator.innerHTML = "Your Are in Line " + leng;
+
+        }
+
+    </script>
+    </body>
+
+</html>
